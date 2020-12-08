@@ -12,11 +12,17 @@ class _Descriptor:
     def __get__(self):
         pass
 
+class Int:
+    """An integer validator"""
+    @classmethod
+    def __call__(cls,x):
+        return int(x)
 
 class Class:
     attr1: int = 0
     attr2: int
     attr3 = 0  # type: int
+    attr7 = Int() 
 
     descr4: int = _Descriptor("descr4")
 
